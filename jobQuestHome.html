@@ -18,33 +18,38 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
+
 <body>
+    <!-- Left Side of UI -->
     <div class="container" id="left">
         <div class="row">
             <div class="col-lg-12" id="aside">
                 <img class="htr-grow-rotate" id="logo" src="./assets/img/logo.png">
                 <div class="row">
+                    <!--COLLAPSE NAVBAR W/ MEDIA QUERY --> 
                     <div class="col-md-12" id="navigation">
-                        <ul class="nav nav-tabs">
-                            <li role="presentation" class="active"><a href="jobQuestHome.html">Home</a></li>
+                        <ul class="nav nav-tabs nav-collapse">
+                            <li role="presentation"><a href="jobQuestHome.html">Home</a></li>
                             <li role="presentation"><a href="question.html">Questions</a></li>
                             <li role="presentation"><a href="#">Messages</a></li>
                         </ul>
                     </div>
+                    <!-- END OF NAVBAR COLLAPSE WRAPPER -->
                 </div>
                 <div class="btn-group btn-group-lg btn-group-vertical" role="group" aria-label="" id="btnSearch">
                     <div class="page-header">
                         <h1>Categories</h1>
                     </div>
-                    <button type="button" class="btn btn-lg search hvr-float-shadow">Javascript</button>
-                    <button type="button" class="btn btn-lg search hvr-float-shadow">HTML</button>
-                    <button type="button" class="btn btn-lg search hvr-float-shadow">CSS</button>
-                    <button type="button" class="btn btn-lg search hvr-float-shadow">Node.js</button>
-                    <button type="button" class="btn btn-lg search hvr-float-shadow">MySQL</button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow"><a href="question.html">Javascript</a></button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow"><a href="question">HTML</a></button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow"><a href="question">CSS</a></button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow"><a href="question">Node.js</a></button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow"><a href="question">MySQL</a></button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Right Side of UI -->
     <div class="container" id="right">
         <div class="row">
             <div class="col-lg-8" id="colRight">
@@ -95,6 +100,8 @@
                     <button type="submit" class="btn btn-lg" id="submit">Submit</button>
                 </div>
             </div>
+
+<script src="basic.js"></script>
 </body>
 
 </html>
