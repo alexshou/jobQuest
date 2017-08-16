@@ -1,0 +1,75 @@
+<!--Homepage for JobQuest app-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Job Quest</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/jobquest.css">
+    <!-- Hover.css Library -->
+    <link rel="stylesheet" type="text/css" href="./css/hover.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container" id="left">
+        <div class="row">
+            <div class="col-lg-4" id="aside">
+                <img src="./img/logo.png">
+                <div class="row">
+                   <div class="col-md-12" id="navigation">
+                        <ul class="nav nav-tabs">
+                            <li role="presentation"><a href="cms">New Question</a></li>
+                           <li role="presentation"><a href="Categories">Manage Categories</a></li>
+                        </ul>
+                    </div>
+ +              </div>
+                <div class="btn-group btn-group-lg btn-group-vertical" role="group" aria-label="" id="btnSearch">
+                    <div class="page-header">
+                        <h1>Categories</h1>
+                    </div>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow">Javascript</button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow">HTML</button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow">CSS</button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow">Node.js</button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow">MySQL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container blog blog-container" id="right">
+        <div class="row">
+          <div id="app" class="col-md-8 col-mid-offset-4 question-container">  
+            <div v-for="question in events" class="panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" v-bind:href="'#'+question.id">{{question.id + "." + question.title}}</a>
+                  </h4>
+                </div>
+                <div v-bind:id="question.id" class="panel-collapse collapse">
+                  <div class="panel-body"><pre>{{"Question: " + question.body}}</pre></div>
+                  <div class="panel-body"><pre>{{"Answer: " + question.answer}}</pre></div>
+                  <div class="panel-body"><pre>{{"Asked by: " + question.company}}</pre></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  <!-- Custom Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+  <script src="js/blog.js" type="text/javascript"></script>
+</body>
+
+</html>

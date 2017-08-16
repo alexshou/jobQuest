@@ -1,0 +1,102 @@
+<!--Homepage for JobQuest app-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Job Quest</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/jobquest.css">
+    <!-- Hover.css Library -->
+    <link rel="stylesheet" type="text/css" href="./css/hover.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container" id="left">
+        <div class="row">
+            <div class="col-lg-4" id="aside">
+                <img src="./img/logo.png">
+                <div class="row">
+                   <div class="col-md-12" id="navigation">
+                        <ul class="nav nav-tabs">
+                           <li role="presentation"><a href="blog">Questions</a></li>
+                           <li role="presentation"><a href="categories">Manage Categories</a></li>
+                        </ul>
+                    </div>
+ +              </div>
+                <div class="btn-group btn-group-lg btn-group-vertical" role="group" aria-label="" id="btnSearch">
+                    <div class="page-header">
+                        <h1>Categories</h1>
+                    </div>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow">Javascript</button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow">HTML</button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow">CSS</button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow">Node.js</button>
+                    <button type="button" class="btn btn-lg search hvr-float-shadow">MySQL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="right">
+        <div class="row">
+            <div class="col-lg-8" id="colRight">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title text-center">Search</h2>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-search"></span>Search</span>
+                                <input type="text" class="form-control" placeholder="Search by Company or Category...">
+                            </div>
+                        </table>
+                    </div>
+                    <div class="panel-heading">
+                        <h2 class="panel-title text-center">Question Generator</h2>
+                    </div>
+                    <p class="formDirections">Have you had an Interview for a Developer position lately? Are you looking to help other developers prepare for an interview? Fill out the form below and submit questions you've been asked on your interview. Be sure to include the company name and a correct response to your question. The more you submit, the better prepared our fellow developers can be. </p>
+                    <div class="panel-body">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <form id="cms">
+                                        <div class="form-group">
+                                            <label for="title">Title:</label>
+                                            <input placeholder="Question Title" type="text" class="form-control" id="title">
+                                            <br/>
+                                            <label for="body">Body:</label>
+                                            <textarea placeholder="Question Body" class="form-control" rows="5" id="body"></textarea>
+                                            <label for="body">Answer:</label>
+                                            <textarea placeholder="Question Answer" class="form-control" rows="5" id="answer"></textarea>
+                                            <label for="company">Asked by what company?:</label>
+                                            <input placeholder="Question asked by what company? " type="text" class="form-control" id="company">
+                                            <div class="form-group">
+                                                <label for="category">Select Category:</label>
+                                                <select class="form-control" id="category">
+                                            </select>
+                                            </div>
+                                            <br/>
+                                            <button type="submit" class="btn btn-success submit">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+    <!-- Custom Script -->
+    <script src="js/cms.js" type="text/javascript"></script>
+</body>
+
+</html>

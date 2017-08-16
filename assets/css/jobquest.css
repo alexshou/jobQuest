@@ -1,0 +1,99 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+}
+
+#logo {
+    padding-left: 3%;
+}
+
+#navigation{
+    display: inline-block;
+    float: left;
+    margin-top: 10%;
+    margin-left: 15%;
+    width: 300px;
+}
+
+.formDirections {
+    margin-top: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#left {
+    width: 30%;
+    background-color: #dcdcdc;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    float: left;
+    height: 1000px;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+#right {
+    height: auto;
+    right: 10px;
+    width: 60%;
+    background-color: #dcdcdc;
+    float: right;
+    margin-top: 0px;
+    margin-right: 100px;
+    line-height: 40px;
+    padding-top: 15px;
+    padding-left: 25px;
+}
+
+.search {
+    margin-bottom: 10%;
+}
+
+#btnSearch {
+    margin: auto;
+}
+
+#colRight,
+#colRightQuest {
+    margin: 0px 55px;
+    width: 85%;
+}
+
+h2.panel-title {
+    font-size: 200%;
+}
+
+label {
+    font-size: 150%;
+}
+
+#submit {
+    margin: 0px 25px 10px;
+}
+
+#btnSearch {
+    margin: 10px 100px;
+}
+
+.btn-lg,
+.panel-title {
+    background-color: #4C51B5;
+    color: white;
+}
+
+#colRightQuest {
+    background-color: lightgray;
+    float: right;
+    height: 300px;
+}
+.page-header {
+    float: left;
+    margin-bottom: 20%
+
+}
