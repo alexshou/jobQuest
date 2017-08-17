@@ -3,6 +3,9 @@
     data: {
       events: [
         
+      ],
+      categories: [
+      
       ]
     }
   });
