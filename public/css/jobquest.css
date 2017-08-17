@@ -8,7 +8,16 @@ html {
     padding-left: 3%;
 }
 
-#navigation{
+a {
+    color: inherit;
+}
+
+.search{
+    width: 250px;
+    margin: 0 auto;
+}
+
+#navigation {
     display: inline-block;
     float: left;
     margin-top: 10%;
@@ -92,8 +101,8 @@ label {
     float: right;
     height: 300px;
 }
+
 .page-header {
     float: left;
     margin-bottom: 20%
-
 }

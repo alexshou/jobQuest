@@ -23,61 +23,55 @@
 <body>
     <div class="container" id="left">
         <div class="row">
-            <div class="col-lg-4" id="aside">
+            <div class="col-lg-12" id="aside">
                 <img src="./img/logo.png">
                 <div class="row">
-                   <div class="col-md-12" id="navigation">
+                    <div class="col-md-12" id="navigation">
                         <ul class="nav nav-tabs">
                             <li role="presentation"><a href="cms">New Question</a></li>
-                           <li role="presentation"><a href="Categories">Manage Categories</a></li>
+                            <li role="presentation"><a href="Categories">Manage Categories</a></li>
                         </ul>
                     </div>
-               </div>
+                </div>
                 <div class="btn-group btn-group-lg btn-group-vertical" role="group" aria-label="" id="btnSearch">
                     <div class="page-header">
                         <h1>Categories</h1>
-                    </div> 
-                    <!--
-                    <button type="button" class="btn btn-lg search hvr-float-shadow">Javascript</button>
-                    <button type="button" class="btn btn-lg search hvr-float-shadow">HTML</button>
-                    <button type="button" class="btn btn-lg search hvr-float-shadow">CSS</button>
-                    <button type="button" class="btn btn-lg search hvr-float-shadow">Node.js</button>
-                    <button type="button" class="btn btn-lg search hvr-float-shadow">MySQL</button>
-                    -->
-                      <div id="appCat" class="col-md-8 col-mid-offset-4 category-left">  
-                        <div v-for="category in cats" class="" id = "">
-                             <button type = "button" class="btn btn-lg search hvr-float-shadow"> <a v-bind:href="'/blog?category_id=' + category.id"></a>{{category.name}}</button>  
-                          </div>
-                      </div>
+                    </div>
+                    <div class="row">
+                        <div id="appCat" class="col-md-12 category-left">
+                            <div v-for="category in cats" class="" id="">
+                                <button type="button" class="btn btn-lg search hvr-float-shadow"> <a v-bind:href="'/blog?category_id=' + category.id">{{category.name}}</a></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="container blog blog-container" id="right">
         <div class="row">
-          <div id="app" class="col-md-8 col-mid-offset-4 question-container">  
-            <div v-for="question in events" class="panel-group">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h4 class="panel-title">
+            <div id="app" class="col-md-12 question-container">
+                <div v-for="question in events" class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
                     <a data-toggle="collapse" v-bind:href="'#'+question.id">{{question.id + "." + question.title}}</a>
                   </h4>
+                        </div>
+                        <div v-bind:id="question.id" class="panel-collapse collapse">
+                            <div class="panel-body"><pre>{{"Question: " + question.body}}</pre></div>
+                            <div class="panel-body"><pre>{{"Answer: " + question.answer}}</pre></div>
+                            <div class="panel-body"><pre>{{"Asked by: " + question.company}}</pre></div>
+                        </div>
+                    </div>
                 </div>
-                <div v-bind:id="question.id" class="panel-collapse collapse">
-                  <div class="panel-body"><pre>{{"Question: " + question.body}}</pre></div>
-                  <div class="panel-body"><pre>{{"Answer: " + question.answer}}</pre></div>
-                  <div class="panel-body"><pre>{{"Asked by: " + question.company}}</pre></div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
     </div>
-
-  <!-- Custom Script -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
-  <script src="js/blog.js" type="text/javascript"></script>
-  <script src="js/basic.js" type="text/javascript"></script>
+    <!-- Custom Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+    <script src="js/blog.js" type="text/javascript"></script>
+    <script src="js/basic.js" type="text/javascript"></script>
 </body>
 
 </html>
