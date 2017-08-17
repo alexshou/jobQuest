@@ -47,7 +47,7 @@
                 -->
                       <div id="appCat" class="col-md-8 col-mid-offset-4 category-left">  
                         <div v-for="category in cats" class="" id = "btnSearch">
-                             <button type = "button" class="btn btn-lg search hvr-float-shadow">{{category.name}}</button>  
+                             <button type = "button" class="btn btn-lg search hvr-float-shadow"> <a v-bind:href="'/blog?category_id=' + category.id">{{category.name}}</a></button>  
                           </div>
                       </div>
                 </div>
