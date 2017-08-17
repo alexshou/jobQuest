@@ -1,17 +1,26 @@
+    const appCat = new Vue({
+    el: "#appCat",
+    data: {
+      cats: [
+        
+      ]
+    }
+  });
+
 $(document).ready(function() {
   // Getting references to the category inout and category container, as well as the table body
   var nameInput = $("#category-name");
   var categoryList = $("tbody");
   var categoryContainer = $(".category-container");
+  var categoryListLeft = $("ol");
+  var categoryLeft = $(".category-left");
   // Adding event listeners to the form to create a new object, and the button to delete
   // a category
   $(document).on("submit", "#category-form", handleCategoryFormSubmit);
   $(document).on("click", ".delete-category", handleDeleteButtonPress);
  
   // Getting the intiial list of categoris
-  console.log("00000000000000000000000000000000000000000000000000000");
   getCategories();
-  console.log("1111111111111111111111111111111111111111111111111111");
   // A function to handle what happens when the form is submitted to create a new Author
   function handleCategoryFormSubmit(event) {
     event.preventDefault();
@@ -35,6 +44,7 @@ $(document).ready(function() {
   }
 
   // Function for creating a new list row for categories
+
   function createCategoryRow(categoryData) {
     var newTr = $("<tr>");
     newTr.data("category", categoryData);
@@ -54,6 +64,9 @@ $(document).ready(function() {
         rowsToAdd.push(createCategoryRow(data[i]));
       }
       renderCategoryList(rowsToAdd);
+      //renderCategoryListLeft(data);
+      console.log(data);
+      appCat.cats = data;
       nameInput.val("");
     });
   }

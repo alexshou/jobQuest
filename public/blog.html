@@ -32,16 +32,23 @@
                            <li role="presentation"><a href="Categories">Manage Categories</a></li>
                         </ul>
                     </div>
- +              </div>
+               </div>
                 <div class="btn-group btn-group-lg btn-group-vertical" role="group" aria-label="" id="btnSearch">
                     <div class="page-header">
                         <h1>Categories</h1>
-                    </div>
+                    </div> 
+                    <!--
                     <button type="button" class="btn btn-lg search hvr-float-shadow">Javascript</button>
                     <button type="button" class="btn btn-lg search hvr-float-shadow">HTML</button>
                     <button type="button" class="btn btn-lg search hvr-float-shadow">CSS</button>
                     <button type="button" class="btn btn-lg search hvr-float-shadow">Node.js</button>
                     <button type="button" class="btn btn-lg search hvr-float-shadow">MySQL</button>
+                    -->
+                      <div id="appCat" class="col-md-8 col-mid-offset-4 category-left">  
+                        <div v-for="category in cats" class="" id = "btnSearch">
+                             <button type = "button" class="btn btn-lg search hvr-float-shadow">{{category.name}}</button>  
+                          </div>
+                      </div>
                 </div>
             </div>
         </div>

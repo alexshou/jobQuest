@@ -7,6 +7,15 @@
     }
   });
 
+  const appCat = new Vue({
+    el: "#appCat",
+    data: {
+      cats: [
+        
+      ]
+    }
+  });
+
 $(document).ready(function() {
   /* global moment */
 
@@ -31,8 +40,16 @@ $(document).ready(function() {
   else {
     getQuestions();
   }
-
-
+  // Getting the intiial list of categoris
+  getCategories();
+  function getCategories() {
+    $.get("/api/categories", function(data) {
+      var rowsToAdd = [];
+      //renderCategoryListLeft(data);
+      console.log(data);
+      appCat.cats = data;
+    });
+  }
   // This function grabs questions from the database and updates the view
   function getQuestions(category) {
     categoryId = category || "";

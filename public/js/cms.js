@@ -1,3 +1,21 @@
+  const appCat = new Vue({
+    el: "#appCat",
+    data: {
+      cats: [
+        
+      ]
+    }
+  });
+
+  const appSearch = new Vue({
+    el: "#appSearch",
+    data: {
+      searches: [
+        
+      ]
+    }
+  });
+
 $(document).ready(function() {
   // Getting jQuery references to the question body, title, form, and category select
   var bodyInput = $("#body");
@@ -5,9 +23,12 @@ $(document).ready(function() {
   var answerInput = $("#answer");
   var companyInput = $("#company");
   var cmsForm = $("#cms");
+  var cmsSearch = $("#cms-search");
   var categorySelect = $("#category");
+  var searchInput = $('#searchInput')
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", handleFormSubmit);
+  $(cmsSearch).on("submit", handleSearch);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a question)
   var url = window.location.search;
   var questionId;
@@ -28,8 +49,33 @@ $(document).ready(function() {
 
   // Getting the categories, and their questions
   getCategories();
+  getCategoriesVue();
+  function getCategoriesVue() {
+    $.get("/api/categories", function(data) {
+      console.log(data);
+      appCat.cats = data;
+      });
+  }
 
-  // A function for handling what happens when the form to create a new question is submitted
+    // This function grabs questions from the database and updates the view
+  function getQuestions(category) {
+    categoryId = category || "";
+    if (categoryId) {
+      categoryId = "/?category_id=" + categoryId;
+    }
+    $.get("/api/questions" + categoryId, function(data) {
+        console.log("Questions----------------------------------------------------", data);
+      questions = data;
+      if (!questions || !questions.length) {
+        displayEmpty(category);
+      }
+      else {
+        //initializeRows();
+        app.events = questions;
+      }
+    });
+  }
+
   function handleFormSubmit(event) {
     event.preventDefault();
     // Wont submit the question if we are missing a body, title, or category
@@ -59,6 +105,34 @@ $(document).ready(function() {
     else {
       submitQuestion(newQuestion);
     }
+  }
+  // A function for handling what happens when the form to create a new question is submitted
+  function handleSearch(event) {
+    console.log("search debug");
+    event.preventDefault();
+    // Wont submit the question if we are missing a body, title, or category
+    if (!searchInput.val().trim()) {
+      return;
+    }
+    // Constructing a newQuestion object to hand to the database
+    var newSearch = searchInput.val().trim();
+    $.get("/api/questions", function(data){
+        var searchResults = [];
+        for (var i = 0; i < data.length; i++) {
+            if(data[i].company.toUpperCase() === newSearch.toUpperCase()) {
+              searchResults.push(data[i]);
+            }
+         }
+         console.log(data);
+         console.log(searchResults);
+         if(searchResults.length === 0) {
+            alert("No results found. Please enter another company name. ")
+         } else {
+            appSearch.searches = searchResults;
+         }
+          //window.location.href = "/blog";
+    });
+
   }
 
   // Submits a new question and brings user to question page upon completion
@@ -113,8 +187,6 @@ $(document).ready(function() {
       rowsToAdd.push(createCategoryRow(data[i]));
     }
     categorySelect.empty();
-    console.log(rowsToAdd);
-    console.log(categorySelect);
     categorySelect.append(rowsToAdd);
     categorySelect.val(categoryId);
   }
