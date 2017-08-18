@@ -105,3 +105,8 @@ label {
     float: left;
     margin-bottom: 20%
 }
+
+.panel-title {
+    background-color: transparent;
+    color: #666;
+}
