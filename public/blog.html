@@ -51,11 +51,11 @@
     <div class="container blog blog-container" id="right">
         <div class="row">
             <div id="app" class="col-md-12 question-container">
-                <div v-for="question in events" class="panel-group">
+                        <div v-for="question in events" class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                    <a data-toggle="collapse" v-bind:href="'#'+question.id">{{question.id + "." + question.title}}</a>
+                    <a data-toggle="collapse" v-bind:href="'#'+question.id">{{question.Category.name + ": " + question.title}}</a>
                   </h4>
                         </div>
                         <div v-bind:id="question.id" class="panel-collapse collapse">

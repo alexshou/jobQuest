@@ -59,6 +59,7 @@ $(document).ready(function() {
     $.get("/api/questions" + categoryId, function(data) {
         console.log("Questions----------------------------------------------------", data);
       questions = data;
+      console.log(data);
       if (!questions || !questions.length) {
         displayEmpty(category);
       }
