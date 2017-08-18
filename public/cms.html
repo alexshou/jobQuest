@@ -16,33 +16,34 @@
     <link rel="stylesheet" type="text/css" href="./css/hover.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery.js"></script>
-     <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container" id="left">
         <div class="row">
-            <div class="col-lg-4" id="aside">
+            <div class="col-lg-12" id="aside">
                 <img src="./img/logo.png">
                 <div class="row">
-                   <div class="col-md-12" id="navigation">
+                    <div class="col-md-12" id="navigation">
                         <ul class="nav nav-tabs">
-                           <li role="presentation"><a href="blog">Questions</a></li>
-                           <li role="presentation"><a href="categories">Manage Categories</a></li>
+                            <li role="presentation"><a href="cms">Home</a></li>
+                            <li role="presentation"><a href="categories">Categories</a></li>
+                            <li role="presentation"><a href="blog">Questions</a></li>
                         </ul>
                     </div>
- +              </div>
+                    + </div>
                 <div class="btn-group btn-group-lg btn-group-vertical" role="group" aria-label="" id="btnSearch">
                     <div class="page-header">
                         <h1>Categories</h1>
                     </div>
-                    <div class = "row">
-                    <div id="appCat" class="col-md-12 category-left">  
-                        <div v-for="category in cats" class="" id = "">
-                             <button type = "button" class="btn btn-lg search hvr-float-shadow"> <a v-bind:href="'/blog?category_id=' + category.id">{{category.name}}</a></button>  
-                          </div>
-                      </div>
+                    <div class="row">
+                        <div id="appCat" class="col-md-12 category-left">
+                            <div v-for="category in cats" class="" id="">
+                                <button type="button" class="btn btn-lg search hvr-float-shadow"> <a v-bind:href="'/blog?category_id=' + category.id">{{category.name}}</a></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -58,36 +59,33 @@
                     <div class="panel-body">
                         <table class="table table-striped">
                             <div class="input-group">
-                                      <form id="cms-search">
-                                        <div class="form-group">
-                                            
-                                            <input placeholder = "Company keyword" type="text" class="form-control" id="searchInput">
-                                            <br/>
-                                            <button type="submit" class="btn btn-success submit">Submit</button>
-                                        </div>
-                                    </form>
+                                <form id="cms-search">
+                                    <div class="form-group">
+                                        <input placeholder="Company keyword" type="text" class="form-control" id="searchInput">
+                                        <br/>
+                                        <button type="submit" class="btn btn-success submit">Submit</button>
+                                    </div>
+                                </form>
                             </div>
                         </table>
-                    <div id="appSearch" class="col-md-8 col-mid-offset-4 question-container">  
-                    <div v-for="question in searches" class="panel-group">
-                      <div class="panel panel-default">
-                        <div class="panel-heading">
-                          <h4 class="panel-title">
+                        <div id="appSearch" class="col-md-8 col-mid-offset-4 question-container">
+                            <div v-for="question in searches" class="panel-group">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
                             <a data-toggle="collapse" v-bind:href="'#'+question.id">{{question.title}}</a>
                           </h4>
+                                    </div>
+                                    <div v-bind:id="question.id" class="panel-collapse collapse">
+                                        <div class="panel-body"><pre>{{"Question: " + question.body}}</pre></div>
+                                        <div class="panel-body"><pre>{{"Answer: " + question.answer}}</pre></div>
+                                        <div class="panel-body"><pre>{{"Asked by: " + question.company}}</pre></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div v-bind:id="question.id" class="panel-collapse collapse">
-                          <div class="panel-body"><pre>{{"Question: " + question.body}}</pre></div>
-                          <div class="panel-body"><pre>{{"Answer: " + question.answer}}</pre></div>
-                          <div class="panel-body"><pre>{{"Asked by: " + question.company}}</pre></div>
-                        </div>
-                      </div>
                     </div>
-                  </div>
-                    </div>
-
-
-                   <div class="panel-heading">
+                    <div class="panel-heading">
                         <h2 class="panel-title text-center">Question Generator</h2>
                     </div>
                     <p class="formDirections">Have you had an Interview for a Developer position lately? Are you looking to help other developers prepare for an interview? Fill out the form below and submit questions you've been asked on your interview. Be sure to include the company name and a correct response to your question. The more you submit, the better prepared our fellow developers can be. </p>
@@ -109,7 +107,7 @@
                                             <div class="form-group">
                                                 <label for="category">Select Category:</label>
                                                 <select class="form-control" id="category">
-                                            </select>
+                                                </select>
                                             </div>
                                             <br/>
                                             <button type="submit" class="btn btn-success submit">Submit</button>
@@ -119,12 +117,11 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
-    <!-- Custom Script -->
-    <script src="js/cms.js" type="text/javascript"></script>
-    <script src="js/basic.js" type="text/javascript"></script>
+            <!-- Custom Script -->
+            <script src="js/cms.js" type="text/javascript"></script>
+            <script src="js/basic.js" type="text/javascript"></script>
 </body>
 
 </html>
