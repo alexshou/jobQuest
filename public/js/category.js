@@ -52,7 +52,7 @@ $(document).ready(function() {
     newTr.append("<td> " + categoryData.Questions.length + "</td>");
     newTr.append("<td><a href='/blog?category_id=" + categoryData.id + "'>Go to questions</a></td>");
     newTr.append("<td><a href='/cms?category_id=" + categoryData.id + "'>Create a question</a></td>");
-    newTr.append("<td><a style='cursor:pointer;color:red' class='delete-category'>Delete Category</a></td>");
+    newTr.append("<td><a style='cursor:pointer;color:red' class='delete-category'></a></td>");
     return newTr;
   }
 
