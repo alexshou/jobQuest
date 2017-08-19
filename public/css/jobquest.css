@@ -104,6 +104,7 @@ label {
 .page-header {
     float: left;
     margin-bottom: 20%
+    margin: 15px 0px 15px;
 }
 
 .panel-title {
